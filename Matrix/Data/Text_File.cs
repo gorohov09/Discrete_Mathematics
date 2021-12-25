@@ -1,17 +1,14 @@
-﻿using System;
+﻿using Matrix.Data.Base;
+using System;
 using System.IO;
 
 namespace Matrix
 {
-    public class Text_File : IReadMatrix
+    public class Text_File : Data_File, IReadMatrix
     {
-        private string _file;
-        private int[,] _data;
-
-        public Text_File(string file)
+        public Text_File(string file) :
+            base(file)
         {
-            _file = file;
-            _data = new int[7, 7];
         }
 
         public int[,] Read()

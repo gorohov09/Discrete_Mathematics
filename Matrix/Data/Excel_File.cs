@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Matrix.Data.Base;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,15 +8,11 @@ using Excel = Microsoft.Office.Interop.Excel;
 
 namespace Matrix
 {
-    public class Excel_File : IReadMatrix
+    public class Excel_File : Data_File, IReadMatrix
     {
-        private string _file;
-        private int[,] _data;
-
         public Excel_File(string file)
+            :base(file)
         {
-            _file = file;
-            _data = new int[7, 7];
         }
 
         public int[,] Read()

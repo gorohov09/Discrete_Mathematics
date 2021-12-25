@@ -1,16 +1,13 @@
-﻿using System.Data.SqlClient;
+﻿using Matrix.Data.Base;
+using System.Data.SqlClient;
 
 namespace Matrix
 {
-    public class Database_File : IReadMatrix
+    public class Database_File : Data_File, IReadMatrix
     {
-        private string _file;
-        private int[,] _data;
-
         public Database_File(string file)
+            : base(file)
         {
-            _file = file;
-            _data = new int[7, 7];
         }
 
         public int[,] Read() 
